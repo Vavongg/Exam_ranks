@@ -12,12 +12,12 @@
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putchar(char c);
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void	ft_putchar(char *str)
 {
 	int i;
 
@@ -27,12 +27,4 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
-}
-
-int main(int ac, char **av)
-{
-	if (ac == 2)
-		ft_putstr(av[1]);
-	ft_putchar('\n');
-	return (0);
 }

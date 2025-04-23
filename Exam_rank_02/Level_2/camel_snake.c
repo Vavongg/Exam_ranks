@@ -22,14 +22,14 @@ void	camel_snake(char *str)
 	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
 			ft_putchar('_');
 			str[i] += 32;
 		}
-		ft_putchar(str[i]);
+		ft_putchar(str[i])
 		i++;
 	}
 }

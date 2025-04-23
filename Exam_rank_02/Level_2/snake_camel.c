@@ -27,7 +27,7 @@ void	snake_to_camel(char *str)
 		if (str[i] == '_')
 		{
 			i++;
-			str[i] -= ('a' - 'A');
+			str[i] -= 32;
 		}
 		ft_putchar(str[i]);
 		i++;

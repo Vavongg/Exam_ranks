@@ -17,17 +17,17 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void alpha_mirror(char *str)
+void	alpha_mirror(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] >= 'A') && (str[i] <= 'Z'))
-			str[i] = ('M' - (str[i] - 'N'));
-		else if ((str[i] >= 'a') && (str[i] <= 'z'))
-			str[i] = ('m' - (str[i] - 'n'));
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = 'a' - (str[i] - 'z');
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = 'A' - (str[i] - 'Z');
 		ft_putchar(str[i]);
 		i++;
 	}

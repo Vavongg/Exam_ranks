@@ -24,9 +24,8 @@ void	rotone(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] >= 'A') && (str[i] <= 'Y')
-						|| (str[i] >= 'a') && (str[i] <= 'y'))
-						str[i] += 1;
+		if ((str[i] >= 'a' && str[i] <= 'y') || (str[i] >= 'A' && str[i] <= 'Y'))
+			str[i] += 1;
 		else if (str[i] == 'z' || str[i] == 'Z')
 			str[i] -= 25;
 		ft_putchar(str[i]);

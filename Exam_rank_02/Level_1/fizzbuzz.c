@@ -12,15 +12,15 @@
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
 void	ft_putstr(char *str)
 {
-	int i;
-
+	int	i;
+	
 	i = 0;
 	while (str[i])
 	{
@@ -28,6 +28,7 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
+
 void	ft_putnbr(int nb)
 {
 	if (nb > 9)
@@ -43,11 +44,11 @@ void	fizzbuzz(int start, int end)
 {
 	while (start <= end)
 	{
-		if ((start % 3 == 0) && (start % 5 == 0))
+		if (start % 3 == 0 && start % 5 == 0)
 			ft_putstr("fizzbuzz");
-		else if ((start % 3) == 0)
+		else if (start % 3 == 0)
 			ft_putstr("fizz");
-		else if ((start % 5) == 0)
+		else if (start % 5 == 0)
 			ft_putstr("buzz");
 		else
 			ft_putnbr(start);
@@ -55,8 +56,9 @@ void	fizzbuzz(int start, int end)
 		start++;
 	}
 }
-int main()
+
+int	main()
 {
 	fizzbuzz(1, 100);
-	return (0);
+	return 0;
 }

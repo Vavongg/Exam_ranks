@@ -29,11 +29,10 @@ int	ft_strlen(char *str)
 
 void	rev_print(char *str)
 {
-
 	int len;
 
 	len = ft_strlen(str);
-	while (len--)
+	while (len-- >= 0)
 	{
 		ft_putchar(str[len]);
 	}

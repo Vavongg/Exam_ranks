@@ -17,37 +17,37 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	check_ascii_tab(int *ascii_tab, char c_str_2)
+void	check_doublon(int *tab, char str)
 {
-	if (ascii_tab[(int)c_str_2] == 0)
+	if (tab[(int)str] == 0)
 	{
-		ft_putchar(c_str_2);
-		ascii_tab[(int)c_str_2] = 1;
+		ft_putchar(str);
+		tab[(int)str] = 1;
 	}
 }
 
 void	ft_union(char *str_1, char *str_2)
 {
-	int	idx;
-	int	ascii_tab[256];
+	int	i;
+	int	seen[256];
 
-	idx = 0;
-	while (idx <= 256)
+	i = 0;
+	while (i <= 256)
 	{
-		ascii_tab[idx] = 0;
-		idx++;
+		seen[i] = 0;
+		i++;
 	}
-	idx = 0;
-	while (str_1[idx])
+	i = 0;
+	while (str_1[i])
 	{
-		check_ascii_tab(ascii_tab, str_1[idx]);
-		idx++;
+		check_doublon(seen, str_1[i]);
+		i++;
 	}
-	idx = 0;
-	while (str_2[idx])
+	i = 0;
+	while (str_2[i])
 	{
-		check_ascii_tab(ascii_tab, str_2[idx]);
-		idx++;
+		check_doublon(seen, str_2[i]);
+		i++;
 	}
 }
 

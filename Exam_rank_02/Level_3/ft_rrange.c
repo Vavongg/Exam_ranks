@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int     *ft_rrange(int start, int end)
+int	*ft_rrange(int start, int end)
 {
 	int	i = 0;
 	int	size_tab;

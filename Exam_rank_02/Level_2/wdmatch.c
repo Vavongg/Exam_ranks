@@ -35,18 +35,18 @@ int	ft_strlen(char *str)
 
 void	ft_wd_match(char *first, char *second)
 {
-	int	idx_first;
-	int	idx_second;
+	int	i_first;
+	int	i_second;
 
-	idx_first = 0;
-	idx_second = 0;
-	while (second[idx_second])
+	i_first = 0;
+	i_second = 0;
+	while (second[i_second])
 	{
-		if (first[idx_first] == second[idx_second])
-			idx_first++;
-		idx_second++;
+		if (first[i_first] == second[i_second])
+			i_first++;
+		i_second++;
 	}
-	if (idx_first == ft_strlen(first))
+	if (i_first == ft_strlen(first))
 		ft_putstr(first);
 }
 

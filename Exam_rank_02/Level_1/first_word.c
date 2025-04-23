@@ -24,17 +24,17 @@ void	first_word(char *str)
 	i = 0;
 	while (str[i] == 32 || str[i] == '\t')
 		i++;
-	while (str[i] && (str[i] != 32 && str[i] != '\t'))
+	while (str[i] && str[i] != 32 && str[i] != '\t')
 	{
-			ft_putchar(str[i]);
-			i++;
+		ft_putchar(str[i]);
+		i++;
 	}
 }
 
-int main (int ac, char **av)
+int	main(int ac, char **av)
 {
 	if (ac == 2)
 		first_word(av[1]);
-	write(1, "\n", 1);
-	return 0;
+	ft_putchar('\n');
+	return (0);
 }

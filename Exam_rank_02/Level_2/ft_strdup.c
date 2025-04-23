@@ -36,13 +36,13 @@ char *ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-	size_t	size;
-	char *dup;
+	size_t size;
+	char dup;
 
 	size = ft_strlen(src);
-	dup = malloc(sizeof(char) * size + 1);
+	dup = (malloc(sizeof(char) * size + 1));
 	if (dup == NULL)
 		return (NULL);
 	return (ft_strcpy(dup, src));

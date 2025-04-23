@@ -28,10 +28,7 @@ int		main(int ac, char **av)
 			{
 				if (av[i][j] >= 'A' && av[i][j] <= 'Z')
 					av[i][j] += 32;
-				if ((av[i][j] >= 'a' && av[i][j] <= 'z') 
-						&& (av[i][j + 1] == ' ' 
-						|| av[i][j + 1] == '\t' 
-						|| av[i][j + 1] == '\0'))
+				if ((av[i][j] >= 'a' && av[i][j] <= 'z') && (av[i][j + 1] == ' ' || av[i][j + 1] == '\t' || av[i][j + 1] == '\0'))
 					av[i][j] -= 32;
 				write(1, &av[i][j], 1);
 				j++;

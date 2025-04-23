@@ -21,9 +21,9 @@ static char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-size_t	ft_strcspn(const char *s, const char *reject)
+size_t ft_strcspn(const char *s, const char *reject)
 {
-	const char	*first;
+	const char *first;
 
 	first = s;
 	while (*s)

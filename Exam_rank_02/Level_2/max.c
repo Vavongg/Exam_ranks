@@ -18,8 +18,11 @@ int	max(int *tab, unsigned int len)
 		return 0;
 	len--;
 	max = tab[len];
-	while (len--)
+	while (len)
+	{
 		if (tab[len] > max)
 			max = tab[len];
+		len--;
+	}
 	return (max);
 }
