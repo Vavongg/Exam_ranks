@@ -39,3 +39,43 @@ int		main(int ac, char **av)
 	}
 	return (0);
 }
+
+void	rstr_capitalizer(char *str)
+{
+	int	i = 0;
+
+
+	while (str[i])
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		i++;
+	}
+	i = 0;
+	while (str[i])
+	{
+		if ((str[i + 1] < 33) && (str[i] >= 'a' && str[i] <= 'z'))
+			str[i] -= 32;
+		i++;
+	}
+	write(1, "\n", 1);
+}
+
+int main(int ac, char **av)
+{
+	if (ac == 1)
+		write(1, "\n", 1);
+	else
+	{
+		int i = 1;
+		int j = 1;
+		
+		while(i < ac)
+		{
+			rstr_capitalizer(av[j]);
+			i++;
+			j++;
+		}
+	}
+	return (0);
+}

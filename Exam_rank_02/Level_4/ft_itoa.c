@@ -11,36 +11,48 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 char	*ft_itoa(int nbr)
 {
-	int	i = 0;
-	char	*str;
-	int	temp = nbr;
+	char	*str = malloc(sizeof(char) * 4096);
+	long	nb = nbr;
+	int		i = 4095;
 
-	if (nbr == -2147483648)
-		return ("-2147483648");
-	str = malloc(sizeof(char) * i + 1);
 	if (!str)
 		return (NULL);
-	str[i] = '\0';
-	if (nbr == 0)
-		return ("0");
+	str[i--] = '\0';
+	if (nb == 0)
+	{
+		str[i] = '0';
+		return (&str[i]);
+	}
+	if (nb < 0)
+		nb = -nb;
+	while (nb > 0)
+	{
+		str[i--] = (nb % 10) + '0';
+		nb /= 10;
+	}
 	if (nbr < 0)
-	{
-		i++;
-		nbr *= -1;
-		str[0] = '-';
-	}
-	while (temp)
-	{
-		temp /= 10;
-		i++;
-	}
-	while (nbr)
-	{
-		str[--i] = nbr % 10 + '0';
-		nbr /= 10;
-	}
-	return (str);
+		str[i--] = '-';
+	return (&str[i + 1]);
 }
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+	{
+		int	n = atoi(argv[1]);
+		char *result = ft_itoa(n);
+		printf("Résultat de ft_itoa(%d) : %s\n", n, result);
+	}
+	else
+	{
+		printf("Usage: %s <number>\n", argv[0]);
+	}
+	return (0);
+}
+
+
+
