@@ -14,23 +14,21 @@
 
 void	repeat_alpha(char *str)
 {
-	int i;
-	int alpha_i;
+	int i = 0;
+	int j = 0;
 
-	i = 0;
-	alpha_i = 0;
 	while (str[i])
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			alpha_i = str[i] - 'a';
-			while (alpha_i-- >= 0)
+			j = str[i] - 'a';
+			while (j-- >= 0)
 				write(1, &str[i], 1);
 		}
 		else if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			alpha_i = str[i] - 'A';
-			while (alpha_i-- >= 0)
+			j = str[i] - 'A';
+			while (j-- >= 0)
 				write(1, &str[i], 1);
 		}
 		else

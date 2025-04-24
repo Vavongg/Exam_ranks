@@ -14,9 +14,8 @@
 
 size_t ft_strlen(char *str)
 {
-	size_t	i;
+	size_t	i = 0;
 
-	i = 0;
 	while (str[i])
 		i++;
 	return (i);
@@ -24,9 +23,8 @@ size_t ft_strlen(char *str)
 
 char *ft_strcpy(char *dest, char *src)
 {
-	int	i;
+	int	i = 0;
 
-	i = 0;
 	while(src[i])
 	{
 		dest[i] = src[i];

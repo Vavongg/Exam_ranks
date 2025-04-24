@@ -19,7 +19,8 @@ int	ft_atoi(char *str)
 
 	while (str[i])
 	{
-		result = result * 10 + str[i] - '0';
+		result *= 10
+		result += str[i] - '0';
 		i++;
 	}
 	return (result);
@@ -41,14 +42,20 @@ int	is_prime(int nombre)
 	return (1);
 }
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_putnbr(int n)
 {
-	char	c;
-
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	c = n % 10 + '0';
-	write(1, &c, 1);
+	if (n > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
 }
 
 int	main(int ac, char **av)

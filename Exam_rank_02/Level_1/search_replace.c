@@ -19,9 +19,8 @@ void ft_putchar(char c)
 
 void	search_replace(char *str, char a, char b)
 {
-	int i;
+	int i = 0;
 
-	i = 0;
 	while (str[i])
 	{
 		if (str[i] == a)

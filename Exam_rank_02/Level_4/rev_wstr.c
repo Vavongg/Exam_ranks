@@ -12,40 +12,39 @@
 
 #include <unistd.h>
 
-int	main(int ac, char **av)
+void	rev_wstr(char *str)
 {
 	int	i = 0;
 	int	next;
 
-	if (ac == 2)
+	while (str[i])
+		i++;
+	i--;
+	while (i >= 0)
 	{
-		while (av[1][i])
-			i++;
-		i--;
-		while (i >= 0)
+		if (str[i] == ' ' || i == 0)
 		{
-			if (av[1][i] == ' ')
-			{
-				next = i + 1;
-				while (av[1][next] && av[1][next] != ' ')
-				{
-					write(1, &av[1][next], 1);
-					next++;
-				}
-				write(1, " ", 1);
-			}
-			else if (i == 0)
-			{
+			if (i == 0)
 				next = i;
-                while (av[1][next] && av[1][next] != ' ')
-                {
-                    write(1, &av[1][next], 1);
-                    next++;
-                }
+			else
+				next = i + 1;
+			while (str[next] && str[next] != ' ')
+			{
+				write(1, &str[next], 1);
+				next++;
 			}
-			i--;
+			if (i != 0)
+				write(1, " ", 1);
 		}
+		i--;
 	}
+}
+
+int	main(int ac, char **av)
+{
+	if (ac == 2)
+		rev_wstr(av[1]);
 	write(1, "\n", 1);
 	return (0);
 }
+

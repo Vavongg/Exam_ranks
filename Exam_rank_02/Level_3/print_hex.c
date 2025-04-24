@@ -19,10 +19,16 @@ int	ft_atoi(char *str)
 
 	while (str[i])
 	{
-		result = result * 10 + str[i] - '0';
+		result *= 10;
+		result += str[i] - '0';
 		i++;
 	}
 	return (result);
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
 
 void	put_hexa(int n)
@@ -30,8 +36,12 @@ void	put_hexa(int n)
 	char	tab[] = "0123456789abcdef";
 
 	if (n >= 16)
+	{
 		put_hexa(n / 16);
-	write(1, &tab[n % 16], 1);
+		put_hexa(n % 16);
+	}
+	else
+		ft_putchar(tab[n]);
 }
 
 int	main(int ac, char **av)

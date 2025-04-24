@@ -15,17 +15,17 @@
 int	*ft_rrange(int start, int end)
 {
 	int	i = 0;
-	int	size_tab;
+	int	size;
 	int	*tab;
 
 	if (start > end)
-		size_tab = start - end + 1;
+		size = start - end + 1;
 	else
-		size_tab = end - start + 1;
-	tab = malloc(sizeof(int) * size_tab);
+		size = end - start + 1;
+	tab = malloc(sizeof(int) * size);
 	if (!tab)
 		return (NULL);
-	while (i < size_tab)
+	while (i < size)
 	{
 		if (start <= end)
 			tab[i] = end--;

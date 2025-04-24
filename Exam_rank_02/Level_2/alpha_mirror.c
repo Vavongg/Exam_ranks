@@ -19,9 +19,8 @@ void	ft_putchar(char c)
 
 void	alpha_mirror(char *str)
 {
-	int	i;
+	int	i = 0;
 
-	i = 0;
 	while (str[i])
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
